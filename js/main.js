@@ -18,7 +18,7 @@
       var link = card.querySelector('h4 a');
       if (!img || !link) continue;
       slides.push({
-        image: img.src,
+        image: img.src.replace('/styles/medium/', '/styles/wide/'),
         title: link.textContent.trim(),
         href: link.href,
       });
