@@ -280,6 +280,7 @@ body {
   font-weight: 700;
   color: var(--dark);
   margin: 0 0 32px;
+  text-align: center;
 }
 
 /* About section */
