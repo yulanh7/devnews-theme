@@ -106,6 +106,67 @@
   -webkit-box-orient: vertical;
 }
 
+/* Smooth scroll + offset for fixed nav */
+html {
+  scroll-behavior: smooth;
+}
+
+#hero, #articles, #about {
+  scroll-margin-top: 60px;
+}
+
+/* Fixed navigation */
+.devnews-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: #1e293b;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-brand {
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+}
+
+.nav-links a {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #fff;
+}
+
+body {
+  padding-top: 60px;
+}
+
 /* Grid layout overrides for 3 columns */
 @media screen and (min-width: 900px) {
   .views-view-responsive-grid {
