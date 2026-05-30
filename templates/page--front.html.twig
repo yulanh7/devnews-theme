@@ -1,0 +1,76 @@
+{%
+  set body_classes = [
+    'path-frontpage',
+  ]
+%}
+<!DOCTYPE html>
+<html{{ html_attributes }}>
+  <head>
+    <head-placeholder token="{{ placeholder_token }}">
+    <title>{{ head_title|safe_join(' | ') }}</title>
+    <css-placeholder token="{{ placeholder_token }}">
+    <js-placeholder token="{{ placeholder_token }}">
+  </head>
+  <body{{ attributes.addClass(body_classes) }}>
+    <a href="#main-content" class="visually-hidden focusable skip-link">
+      {{ 'Skip to main content'|t }}
+    </a>
+
+    {# Fixed navigation #}
+    <nav class="devnews-nav">
+      <div class="nav-inner">
+        <a href="#hero" class="nav-brand">DevNews</a>
+        <div class="nav-links">
+          <a href="#hero">Home</a>
+          <a href="#about">About</a>
+          <a href="#articles">Articles</a>
+        </div>
+      </div>
+    </nav>
+
+    {# Hero slider — populated by JS from article card DOM #}
+    <section id="hero" class="devnews-hero">
+      <div class="hero-slides"></div>
+      <div class="hero-dots"></div>
+    </section>
+
+    {# About section #}
+    <section id="about" class="devnews-about">
+      <div class="about-inner">
+        <h2>About DevNews</h2>
+        <p>DevNews is your daily source for web development news, tools, and best practices — curated for developers who want to stay ahead.</p>
+        <div class="about-stats">
+          <div class="stat">
+            <span class="stat-number">6</span>
+            <span class="stat-label">Categories</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">50+</span>
+            <span class="stat-label">Articles</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">2026</span>
+            <span class="stat-label">Since</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {# Articles grid #}
+    <section id="articles" class="devnews-articles">
+      <div class="articles-inner">
+        <h2 class="section-title">Latest Articles</h2>
+        <main id="main-content">
+          {{ page.content }}
+        </main>
+      </div>
+    </section>
+
+    {# Footer #}
+    <footer class="devnews-footer">
+      <p>© 2026 DevNews. All rights reserved.</p>
+    </footer>
+
+    <js-bottom-placeholder token="{{ placeholder_token }}">
+  </body>
+</html>
