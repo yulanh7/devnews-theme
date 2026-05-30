@@ -1,0 +1,55 @@
+{%
+  set body_classes = [
+    logged_in ? 'user-logged-in',
+    not root_path ? 'path-frontpage' : 'path-' ~ root_path|clean_class,
+    node_type ? 'page-node-type-' ~ node_type|clean_class,
+  ]
+%}
+<!DOCTYPE html>
+<html{{ html_attributes }}>
+  <head>
+    <head-placeholder token="{{ placeholder_token }}">
+    <title>{{ head_title|safe_join(' | ') }}</title>
+    <css-placeholder token="{{ placeholder_token }}">
+    <js-placeholder token="{{ placeholder_token }}">
+  </head>
+  <body{{ attributes.addClass(body_classes) }}>
+    <a href="#main-content" class="visually-hidden focusable skip-link">
+      {{ 'Skip to main content'|t }}
+    </a>
+
+    {# Fixed navigation #}
+    <nav class="devnews-nav">
+      <div class="nav-inner">
+        <a href="/" class="nav-brand">DevNews</a>
+        <div class="nav-links">
+          <a href="/">Home</a>
+          <a href="/#about">About</a>
+          <a href="/#articles">Articles</a>
+        </div>
+      </div>
+    </nav>
+
+    {# System messages #}
+    {{ page.messages }}
+
+    {# Main content #}
+    <main id="main-content" class="devnews-page-main">
+      <div class="page-inner">
+        {{ page.breadcrumb }}
+        {% if node %}
+          <h1 class="page-node-title">{{ node.label }}</h1>
+        {% endif %}
+        {{ page.highlighted }}
+        {{ page.content }}
+      </div>
+    </main>
+
+    {# Footer #}
+    <footer class="devnews-footer">
+      <p>© 2026 DevNews. All rights reserved.</p>
+    </footer>
+
+    <js-bottom-placeholder token="{{ placeholder_token }}">
+  </body>
+</html>
