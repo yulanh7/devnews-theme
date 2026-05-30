@@ -1,0 +1,7 @@
+name: DevNews Theme
+type: theme
+description: "Custom sub-theme for DevNews portal"
+core_version_requirement: ^10 || ^11
+base theme: olivero
+libraries:
+  - devnews_theme/global-styling

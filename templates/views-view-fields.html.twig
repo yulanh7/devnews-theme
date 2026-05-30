@@ -1,0 +1,19 @@
+<div class="article-card">
+{% if fields.field_image %}
+  <div class="card-image">
+    {{ fields.field_image.content }}
+  </div>
+{% endif %}
+
+  {% if fields.field_category %}
+    <div class="category-badge">
+      {{ fields.field_category.content }}
+    </div>
+  {% endif %}
+
+  <h4>{{ fields.title.content }}</h4>
+
+  <div class="article-meta">
+    {{ fields.body.content }}
+  </div>
+</div>
