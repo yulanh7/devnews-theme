@@ -48,14 +48,16 @@
 /* Category badge */
 .category-badge {
   display: inline-block;
-  background-color: var(--accent);
-  color: white;
-  padding: 4px 12px;
-  border-radius: 999px;
-  font-size: 0.75rem;
+  background-color: #e0f2fe;
+  color: #0369a1;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 0.72rem;
   font-weight: 600;
   margin-bottom: 10px;
   width: fit-content;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 /* 1. Fix Title height issue */
