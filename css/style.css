@@ -336,6 +336,19 @@ body {
   letter-spacing: 0.05em;
 }
 
+/* Footer */
+.devnews-footer {
+  background: #1e293b;
+  padding: 24px;
+  text-align: center;
+}
+
+.devnews-footer p {
+  color: #475569;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
 /* Grid layout overrides for 3 columns */
 @media screen and (min-width: 900px) {
   .views-view-responsive-grid {
